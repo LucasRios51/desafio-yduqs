@@ -73,3 +73,7 @@ kpis = df.groupby('antes_depois').agg({
 - Monitorar a evolução contínua desses indicadores, garantindo que o desempenho se mantenha nos próximos meses.
 - Estender esse modelo de interface para outras páginas críticas, testando se os mesmos ganhos de performance podem ser replicados.
 - Realizar testes A/B periódicos, focando em variações de layout, texto ou posicionamento de CTA, para continuar otimizando a performance.
+
+🧐 Dashboard PowerBI
+- Foi desenvolvido um da
+![alt text](image.png)
