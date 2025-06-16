@@ -11,7 +11,7 @@ Avaliar o impacto da nova versão da página de cadastro de cursos online, lanç
 A abordagem analítica seguiu as seguintes etapas:
 
 1. **Leitura e exploração dos dados** com `pandas`.
-2. **Criação de variáveis derivadas**, como o período `antes/depois` da mudança e a taxa de churn.
+2. **Criação de variáveis derivadas**, como o período `antes/depois` da mudança.
 3. **Cálculo de KPIs relevantes** para cada período.
 4. **Comparações estatísticas** de indicadores antes e depois da modificação.
 5. **Geração de visualizações (realizadas via Power BI)** para suporte à análise.
