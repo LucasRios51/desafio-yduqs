@@ -99,7 +99,7 @@ O dashboard permite uma visualização clara dos efeitos da mudança no comporta
 
 ![alt text](image.png)
 
-O arquivo pode ser acessado aqui:
+O arquivo pode ser acessado/baixado aqui:
 
 ```
 ├── desafio_yduqs
