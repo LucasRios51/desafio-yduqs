@@ -48,7 +48,7 @@ kpis = df.groupby('antes_depois').agg({
         ├── dataset_cadastro_cursos.csv
     ├── README.md
     ├── dashboard-mudanca-cadastro.pbix
-    └── exploratoria.ipynb
+    └── **exploratoria.ipynb**
 ```
 
 
@@ -106,6 +106,6 @@ O arquivo pode ser acessado aqui:
     ├── data
         ├── dataset_cadastro_cursos.csv
     ├── README.md
-    ├── dashboard-mudanca-cadastro.pbix
+    ├── **dashboard-mudanca-cadastro.pbix**
     └── exploratoria.ipynb
 ```
