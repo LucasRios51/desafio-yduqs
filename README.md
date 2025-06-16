@@ -41,6 +41,16 @@ kpis = df.groupby('antes_depois').agg({
     'clicks_cta': 'mean'
 }).reset_index()
 ```
+💡Acessar o arquivo 'exploratoria.ipynb' no caminho a seguir para acompanhar a análise detalhada.
+
+├── desafio_yduqs
+    ├── data
+        ├── dataset_cadastro_cursos.csv
+    ├── README.md
+    ├── dashboard-mudanca-cadastro.pbix
+    └── exploratoria.ipynb
+
+
 ## 📌 KPIs Comparativos — Antes vs Depois
 
 | Indicador               | Antes da mudança | Depois da mudança |
