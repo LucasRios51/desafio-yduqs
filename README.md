@@ -74,6 +74,38 @@ kpis = df.groupby('antes_depois').agg({
 - Estender esse modelo de interface para outras páginas críticas, testando se os mesmos ganhos de performance podem ser replicados.
 - Realizar testes A/B periódicos, focando em variações de layout, texto ou posicionamento de CTA, para continuar otimizando a performance.
 
-🧐 Dashboard PowerBI
-- Foi desenvolvido um da
+## 📊 Dashboard — Análise do Impacto da Nova Página de Cadastro
+
+Este dashboard foi desenvolvido no Power BI com o objetivo de avaliar o impacto da nova versão da página de cadastro de cursos, lançada em 15/02/2024. Ele apresenta indicadores-chave de desempenho (KPIs), distribuições e comparações entre os períodos **antes e depois da mudança**, com foco em usabilidade e conversão.
+
+### 🔍 Principais componentes do dashboard:
+
+- **KPIs principais**: 
+  - Taxa de Conversão
+  - Tempo Médio na Página
+  - % Scroll
+  - Total de Cliques no CTA
+
+- **Gráficos e análises incluídos**:
+  - **Boxplot comparativo**: visualização do tempo na página, cliques e scroll entre os períodos.
+  - **Gráfico de linha temporal**: evolução de acessos, CTA, conversão e scroll ao longo dos trimestres.
+  - **Tabela resumo**: detalhamento por mês e trimestre com formatação condicional.
+  - **Gráfico de rosca**: distribuição dos acessos por origem de tráfego.
+  - **Segmentações (slicers)** para refinar a análise por período, origem de tráfego, cadastro e usuários.
+
+O dashboard permite uma visualização clara dos efeitos da mudança no comportamento do usuário e oferece suporte visual para recomendações estratégicas de produto e design.
+
+> 🔧 Todas as visualizações foram construídas com base no dataset `dataset_cadastro_cursos.csv`, utilizando filtros interativos e análise descritiva via Power BI.
+
 ![alt text](image.png)
+
+O arquivo pode ser acessado aqui:
+
+```
+├── desafio_yduqs
+    ├── data
+        ├── dataset_cadastro_cursos.csv
+    ├── README.md
+    ├── dashboard-mudanca-cadastro.pbix
+    └── exploratoria.ipynb
+```
