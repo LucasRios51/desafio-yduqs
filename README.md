@@ -11,12 +11,11 @@ Avaliar o impacto da nova versão da página de cadastro de cursos online, lanç
 A abordagem analítica seguiu as seguintes etapas:
 
 1. **Leitura e exploração dos dados** com `pandas`.
-2. **Limpeza e tratamento** de valores nulos.
-3. **Criação de variáveis derivadas**, como o período `antes/depois` da mudança e a taxa de churn.
-4. **Cálculo de KPIs relevantes** para cada período.
-5. **Comparações estatísticas** de indicadores antes e depois da modificação.
-6. **Geração de visualizações (realizadas via Power BI)** para suporte à análise.
-7. **Elaboração de recomendações** com base nos padrões identificados.
+2. **Criação de variáveis derivadas**, como o período `antes/depois` da mudança e a taxa de churn.
+3. **Cálculo de KPIs relevantes** para cada período.
+4. **Comparações estatísticas** de indicadores antes e depois da modificação.
+5. **Geração de visualizações (realizadas via Power BI)** para suporte à análise.
+6. **Elaboração de recomendações** com base nos padrões identificados.
 
 ---
 
@@ -30,26 +29,16 @@ from datetime import datetime
 # Leitura da base
 df = pd.read_csv('dataset_cadastro_cursos.csv', parse_dates=['data_sessao'])
 
-# Tratamento inicial
-df['clicks_cta'] = df['clicks_cta'].fillna(0)
-df['scroll_perc'] = df['scroll_perc'].fillna(0)
-df['tempo_na_pagina'] = df['tempo_na_pagina'].fillna(0)
-df['cadastro_realizado'] = df['cadastro_realizado'].astype(int)
-
 # Criação da flag "antes ou depois"
 data_mudanca = pd.to_datetime("2024-02-15")
 df['antes_depois'] = np.where(df['data_sessao'] < data_mudanca, 'Antes', 'Depois')
-
-# Criação da flag de churn
-df['churn'] = np.where(df['cadastro_realizado'] == 0, 1, 0)
 
 # KPIs principais
 kpis = df.groupby('antes_depois').agg({
     'cadastro_realizado': 'mean',
     'tempo_na_pagina': 'mean',
     'scroll_perc': 'mean',
-    'clicks_cta': 'mean',
-    'churn': 'mean'
+    'clicks_cta': 'mean'
 }).reset_index()
 ```
 ## 📌 KPIs Comparativos — Antes vs Depois
@@ -61,15 +50,15 @@ kpis = df.groupby('antes_depois').agg({
 | Scroll Médio (%)        | `69%`            | `83%`             |
 | Média de Cliques no CTA | `1,19`           | `1,79`            |
 
-## 🔎 Insights
-- A taxa de conversão apresentou variação significativa entre os períodos, sugerindo impacto direto da mudança na interface.
-- O tempo médio na página aumentou/diminuiu, o que pode indicar maior engajamento ou possíveis dificuldades de navegação.
-- A média de scroll sinaliza se o conteúdo da nova página está sendo visualizado até o final ou se está sendo ignorado.
-- O churn caiu/subiu após a mudança, sendo um indicativo importante sobre retenção de usuários.
-- Há diferenças relevantes entre canais de aquisição, que podem demandar ações específicas por origem de tráfego.
+🔎 Insights
+- A taxa de conversão aumentou significativamente de 18% para 27%, evidenciando que a nova página está mais eficaz em converter visitantes em cadastros.
+- O tempo médio na página subiu de 150s para 179s, sugerindo que os usuários estão mais engajados ou encontrando mais conteúdo de interesse.
+- O scroll médio cresceu de 69% para 83%, indicando que a nova estrutura visual incentiva a navegação completa da página.
+- A média de cliques no botão de CTA subiu de 1,19 para 1,79, o que demonstra que os elementos de chamada para ação estão mais visíveis ou mais persuasivos.
 
-## ✅ Recomendações
-- Preservar os elementos da nova página que demonstraram impacto positivo na conversão.
-- Refinar os trechos da página com baixo scroll para atrair mais atenção dos usuários.
-- Ajustar as campanhas de tráfego em canais com baixo desempenho após a mudança.
-- Executar novos testes A/B para avaliar variantes futuras da interface com base nos insights levantados.
+✅ Recomendações
+- Manter o novo design da página, já que os indicadores mostram melhora clara na jornada do usuário e nas conversões.
+- Analisar elementos que contribuíram para o maior engajamento, como distribuição de informações, design do CTA ou organização do conteúdo.
+- Monitorar a evolução contínua desses indicadores, garantindo que o desempenho se mantenha nos próximos meses.
+- Estender esse modelo de interface para outras páginas críticas, testando se os mesmos ganhos de performance podem ser replicados.
+- Realizar testes A/B periódicos, focando em variações de layout, texto ou posicionamento de CTA, para continuar otimizando a performance.
